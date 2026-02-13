@@ -78,7 +78,7 @@ Standard YOLO models trained on Western datasets (COCO, ImageNet) struggle with 
    - LCN preprocessing gets "overwritten" by learned features
    - Network has to "unlearn" the LCN effect
 
-2. **YOLOv10**: NMS-free design with dual assignments showed **30% more resilience** (-3% vs -6%/-7%)
+2. **YOLOv10**: NMS-free design with dual assignments showed **30% more resilience** (-5% vs -16%/-15%)
    - Simpler architecture = less interference
    - Fewer post-processing layers = preprocessing signal preserved better
 
