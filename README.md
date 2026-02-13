@@ -94,8 +94,6 @@ Standard YOLO models trained on Western datasets (COCO, ImageNet) struggle with 
 - Hurt performance in normal/good lighting (-8% clear)
 - Net effect: Negative overall
 
----
-
 ## Implications 
 
 ### Key Takeaways
