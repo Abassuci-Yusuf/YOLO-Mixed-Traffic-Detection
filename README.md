@@ -94,6 +94,43 @@ Standard YOLO models trained on Western datasets (COCO, ImageNet) struggle with 
 - Hurt performance in normal/good lighting (-8% clear)
 - Net effect: Negative overall
 
+## 📊 Experimental Results
+
+### Performance Summary
+
+| Model | Config | mAP@0.5 | Inference | Use Case |
+|-------|--------|---------|-----------|----------|
+| YOLOv10 | Baseline k=9 | **57.6%** | 24ms | Production (balanced) ⭐ |
+| YOLOv11 | LCN k=7 | **70.7%** | 39ms | Research (accuracy) |
+| YOLOv9 | Baseline k=9 | 51.6% | 27ms | Baseline |
+
+### Key Findings
+
+1. **LCN preprocessing degrades modern YOLO performance by 20-40%**
+2. **YOLOv11 shows kernel-size dependent behavior with LCN**
+3. **YOLOv10 baseline recommended for production deployment**
+
+📈 **Detailed analysis**: See [/results/README.md](results/README.md)  
+📊 **Complete metrics**: See [/results/metrics.csv](results/metrics.csv)  
+📝 **Research findings**: See [/docs/FINDINGS.md](docs/FINDINGS.md)
+
+## 📂 Repository Structure
+```
+├── data/               # Dataset documentation (12GB not included)
+├── docs/               # Research methodology and findings
+├── models/             # Model weights documentation (files available on request)
+├── notebooks/          # Analysis notebooks
+├── results/            # Performance metrics and visualizations
+│   ├── metrics.csv
+│   ├── performance_comparison_map.png
+│   ├── baseline_vs_lcn.png
+│   └── distribution_analysis.png
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
+```
+
 ## Implications 
 
 ### Key Takeaways
@@ -136,36 +173,6 @@ model.train(data='sea_traffic.yaml', epochs=100)
 - **Matplotlib**, **Seaborn** (visualization)
 - **LabelImg** (annotation tool)
 - **Google Colab** (training environment)
-
----
-
-## 📁 Repository Structure
-```
-YOLO-Mixed-Traffic-Detection/
-├── data/                   # Dataset (not included - too large)
-│   ├── images/            # Raw traffic images
-│   ├── labels/            # YOLO format annotations
-│   └── README.md          # Dataset documentation
-├── models/                # Trained model weights
-│   ├── yolov9_baseline.pt
-│   ├── yolov10_baseline.pt
-│   └── yolov11_baseline.pt
-├── notebooks/             # Jupyter notebooks
-│   ├── 01_data_exploration.ipynb
-│   ├── 02_training_experiments.ipynb
-│   └── 03_results_analysis.ipynb
-├── results/               # Evaluation outputs
-│   ├── confusion_matrices/
-│   ├── performance_charts/
-│   └── metrics.csv
-├── docs/                  # Additional documentation
-│   ├── METHODOLOGY.md
-│   └── LESSONS_LEARNED.md
-├── requirements.txt       # Python dependencies
-├── .gitignore
-├── LICENSE
-└── README.md
-```
 
 ---
 
