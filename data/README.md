@@ -36,6 +36,10 @@ data/
 - Average image size: 640x640
 - File format: JPG
 - Total dataset size: ~12GB
+- 
+## Sample Distribution
+
+See `/results/distribution_analysis.png` for class distribution histograms.
 
 ⚠️ **Note**: Dataset not included in repository due to size constraints 
 and privacy considerations. Sample images available upon request.
